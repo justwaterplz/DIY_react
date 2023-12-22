@@ -1,0 +1,38 @@
+/* 초기화면 css */
+*{
+    margin: 15px;
+    background-color: black;
+}
+.welcome-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    orientation: vertical;
+    height: 100vh;
+}
+
+.welcome-animation{
+    font-size: 30px;
+    color: rgb(57, 255, 20);
+    opacity: 0;
+    animation: fadeIn 0.50s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to{
+        opacity: 1;
+    }
+}
+
+#startbtn{
+    width: 160px;
+    height: 60px;
+    background-color: rgb(57, 255, 20);
+
+    /* text */
+    font-weight: bolder;
+}
+#startbtn:hover{
+    background-color: #ffffff;
+}
