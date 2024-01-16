@@ -1,26 +1,31 @@
 /* 초기화면 css */
 *{
     margin: 15px;
-    background-color: black;
+    
 }
 .welcome-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    orientation: vertical;
+    /* orientation: vertical; */
     height: 100vh;
 }
 
 .welcome-animation{
     font-size: 30px;
-    color: rgb(57, 255, 20);
+    /* color: cornflowerblue; */
     opacity: 0;
-    animation: fadeIn 0.50s ease-in forwards;
+    animation: fadeIn 2s ease-in forwards;
+    font-weight: 800;
 }
 
 @keyframes fadeIn {
-    to{
+    from {
+        opacity: 0;
+    }
+    to {
+        color: cornflowerblue;
         opacity: 1;
     }
 }
@@ -28,10 +33,10 @@
 #startbtn{
     width: 160px;
     height: 60px;
-    background-color: rgb(57, 255, 20);
+    background-color: royalblue;
 
     /* text */
-    font-weight: bolder;
+    font-weight: 900;
 }
 #startbtn:hover{
     background-color: #ffffff;

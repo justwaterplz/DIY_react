@@ -1,54 +1,70 @@
 import React from "react";
-import { Component } from "react";
 import './mylogin.module.css';
+import { useState } from 'react';
+const Mylogin = () => {
 
-class Mylogin extends Component{
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-    constructor(){
-        super();
+    //username 입력값으로 변경
+    const handleUsernameChange = (e) => {
+        setUsername(e.target.value);
+    }
 
-        //userid, password
-        this.state = {
-            userid: '',
-            password: '',
+    //password
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const handleLogin = () => {
+
+        //로그인처리
+        if(!username || !password){
+            alert("username AND password are required");
+            return;
         }
+
+        if(password.length < 10){
+            alert("password should be more than 10 characters");
+            return;
+        }
+
+        console.log('Username', username);
+        console.log('password', password);
     }
-    //
-    //입력값 감지
-    handleInputChange = (event) => {
-        const { name, value } = event.target;
-        this.setState({ [name]: value }); 
-    }
 
-    //submit handler
-    handleSubmit = (event) => {
-        console.log('userid: ', this.state.userid);
-        console.log('password: ', this.state.password);
-    };
-
-    render(){
-        return(
-            <div class="login-container">
-                 <form onSubmit={this.handleSubmit}>
-                    {/* id */}
-                    <label>
-                        user id:
-                        <input className="login-input" type="text" name="userid" value={this.state.userid} onChange={this.handleInputChange}/>
-                    </label>
-
-                    {/* pw */}
-                    <label>
-                        <input className="login-input" type="password" name="password" value={this.state.password} onChange={this.handleInputChange}/>
-                    </label>
-
-                    {/* submit */}
-                    <button type="submit">Sign IN</button>
-                 </form>
+    return(
+        <div>
+            <h1>login</h1>
+            <div>
+                <label htmlFor="username">username</label>
+                <input
+                    type="text"
+                    id="username"
+                    value={username}
+                    onChange={handleUsernameChange}
+                    required
+                />
             </div>
-        );
-    }
-}
 
+            <div>
+                <label htmlFor="password">password</label>
+                <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                    required
+                />
+            </div>
+
+            <div>
+                <button onClick={handleLogin}>LOGIN</button>
+                
+            </div>
+        </div>
+    );
+}
 export default Mylogin;
 /*
 
