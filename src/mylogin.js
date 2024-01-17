@@ -18,6 +18,7 @@ const Mylogin = () => {
 
     const handleLogin = async () => {
 
+        //login 처리
         try{
             const response = await fetch('/data/users.json');
             if(!response.ok){
@@ -32,7 +33,7 @@ const Mylogin = () => {
             if(user){
                 console.log('login success', user);
             }else{
-                console.log('unknown information');
+                console.log('username or password is invalid');
             }
         }catch(error){
             console.error('error occured', error);
@@ -66,7 +67,7 @@ const Mylogin = () => {
 
             <div>
                 <button onClick={handleLogin}>LOGIN</button>
-                
+                <a href="#">asdf</a>
             </div>
         </div>
     );
