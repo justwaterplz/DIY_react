@@ -16,22 +16,28 @@ const Mylogin = () => {
         setPassword(e.target.value);
     }
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
 
-        //로그인처리
-        if(!username || !password){
-            alert("username AND password are required");
-            return;
+        try{
+            const response = await fetch('/data/users.json');
+            if(!response.ok){
+                throw new Error(`http error ${response.status}`);
+            }
+            const data = await response.json();
+
+            const user = data.users.find(
+                (user) => user.username === username && user.password === password
+            );
+
+            if(user){
+                console.log('login success', user);
+            }else{
+                console.log('unknown information');
+            }
+        }catch(error){
+            console.error('error occured', error);
         }
-
-        if(password.length < 10){
-            alert("password should be more than 10 characters");
-            return;
-        }
-
-        console.log('Username', username);
-        console.log('password', password);
-    }
+    };
 
     return(
         <div>
