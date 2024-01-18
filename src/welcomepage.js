@@ -11,7 +11,7 @@ const Welcomepage = () => {
             </div>
             <div className="button-container">
                 <Link to={"/login"}>
-                    <button id="startbtn" value="start">
+                    <button id="startbtn" value="start" className="text-3xl font-bold underline">
                         start
                     </button>
                 </Link>
