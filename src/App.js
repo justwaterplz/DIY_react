@@ -10,7 +10,6 @@ const App = () => {
       <Routes>
         {/* index */}        
         <Route path='/' element={<Welcomepage />} />
-
         {/* login page */}
         <Route path='/login' element={<Mylogin />} />
       </Routes>
