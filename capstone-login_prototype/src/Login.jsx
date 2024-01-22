@@ -3,11 +3,12 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex">
-            <div className="bg-yellow-300 flex-grow w-1/2">
+            {/* 왼쪽부터 60%만 노란색 */}
+            <div className="bg-yellow-300 flex-grow w-3/5">
                 <p>elldow?</p>
             </div>
 
-            <div className="flex-grow w-1/2 bg-blue-300">
+            <div className="flex-grow bg-blue-300">
                 <p>blue?</p>
             </div>
         </div>
