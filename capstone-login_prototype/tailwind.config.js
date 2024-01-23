@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'bebas_neue': ["Bebas Neue", "sans-serif"],
+    },
   },
   plugins: [],
 }
