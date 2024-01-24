@@ -103,7 +103,7 @@ const Login = () => {
 
             <div className="flex-grow bg-blue-300 w-1/4">
                 <div className="text-center mb-10 flex flex-col items-center justify-center h-full">
-                    <p className="text-2xl font-bebas_neue mb-20">Login</p>
+                    <p className="text-6xl font-bebas_neue mb-20">Login</p>
 
                     <div className="flex flex-col w-1/2">
                         <div className="flex items-center mb-2">
