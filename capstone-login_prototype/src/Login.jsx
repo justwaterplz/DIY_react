@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 const Login = () => {
 
+    //화면에 나오는 문장 부분
     const lines = [
         "I have brought peace, freedom, justice, and security to my new empire.",
         "Your new Empire?",
@@ -31,18 +32,63 @@ const Login = () => {
         return () => clearInterval(interval);
     }, [currentLineIndex, currentWordIndex, lines]);
 
+    //일정 단어 넘으면 계행
     const currentLine = lines[currentLineIndex].split(' ');
     const displayedWords = currentLine
     .slice(0, currentWordIndex + 1)
-    .map((word, index, array) => (index === 4 && index !== array.length - 1 ? `${word}\n` : word)) // Add a line break after the fifth word
+    .map((word, index, array) => (index === 4 && index !== array.length - 1 ? `${word}\n` : word)) 
+    // Add a line break after the fifth word
     .join(' ');
+    //문장 끝
+
+    //로그인 기능 - public/data/users.json 파일 사용
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleUsernameChange = (e) => {
+        setUsername(e.target.value);
+    }
+
+    //password
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    }
+
+    const handleLogin = async () => {
+
+        //login 처리
+        try{
+            const response = await fetch('/assets/data/users.json');
+            if(!response.ok){
+                throw new Error(`http error ${response.status}`);
+            }
+            const data = await response.json();
+
+            const user = data.users.find(
+                (user) => user.username === username && user.password === password
+            );
+
+            if(user){
+                console.log('login success', user);
+                alert('login success');
+            }else if(!username || !password){
+                console.log('username or password is not entered');
+                alert('username or password is not entered');
+            }else{
+                console.log('username or password is invalid');
+                alert('invalid username or password');
+            }
+        }catch(error){
+            console.error('error occured', error);
+        }
+    };
 
     return (
         <div className="min-h-screen flex">
             {/* 왼쪽부터 60%만 노란색 */}
             <div className="flex bg-yellow-300 w-3/4  items-center justify-center">
                 <div className="text-center mb-10 relative whitespace-pre-wrap">
-                    <p className="font-bebas_neue text-4xl mb-4">asdf</p>
+                    <p className="font-bebas_neue text-4xl mb-4">거지(유태민)키우기</p>
                     <img src="public/assets/images/starwars.gif" alt="Your Image" className="mb-4 mx-auto" />
 
                     <div className="text-center ">
@@ -69,6 +115,9 @@ const Login = () => {
                             type="text"
                             placeholder="username"
                             className="block w-full px-4 py-2 border border-gray-300 rounded"
+                            value={username}
+                            onChange={handleUsernameChange}
+                            required
                             />
                         </div>
 
@@ -79,15 +128,19 @@ const Login = () => {
                             <input
                             type="password"
                             placeholder="password"
+                            value={password}
+                            onChange={handlePasswordChange}
+                            required
                             className="block w-full px-4 py-2 mb-4 border border-gray-300 rounded"
                             />
                         </div>
                     </div>
 
-                    <div className="flex items-center w-1/2">
-                        <button className="px-2 py-2 bg-gray-800 text-white rounded flex-grow">Login</button>
+                        <div className="flex items-center w-1/2">
+                            <button onClick={handleLogin} className="px-2 py-2 bg-gray-800 text-white rounded flex-grow">Login</button>
+                            <a value="" href="https://www.youtube.com/watch?v=pWTTMgU6EFY" className="ml-6">sign-up</a>
                         </div>
-                    </div>
+                </div>
             </div>
         </div>
     );
