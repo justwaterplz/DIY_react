@@ -22,3 +22,27 @@
   background: linear-gradient(45deg, #ff0000, #ff9900, #ffff00, #33cc33, #3366cc, #9900cc);
   animation: rainbowChung 2s infinite linear;
 }
+
+/* css for chat */
+/* styles.css */
+
+.message {
+  padding: 8px;
+  margin-bottom: 8px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message p {
+  margin: 0;
+}
+
+.message.right {
+  background-color: lightgreen;
+  align-self: flex-end;
+}
+
+.message.left {
+  background-color: lightblue;
+  align-self: flex-start;
+}
