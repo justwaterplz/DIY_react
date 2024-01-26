@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; //조건부로 
+
 const Login = () => {
 
     //화면에 나오는 문장 부분
@@ -44,6 +46,8 @@ const Login = () => {
     //로그인 기능 - public/data/users.json 파일 사용
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loggedin, setLoggedin] = useState(false);
+    const navigate = useNavigate(); // /chat으로 이동하기 위한 변수
 
     const handleUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -71,6 +75,13 @@ const Login = () => {
             if(user){
                 console.log('login success', user);
                 alert('login success');
+
+                //로그인 상태 true로 전환
+                setLoggedin((prevLoggedin) => !prevLoggedin);
+                console.log('Login state updated:', !loggedin);
+
+                navigate("/chat");
+
             }else if(!username || !password){
                 console.log('username or password is not entered');
                 alert('username or password is not entered');
@@ -82,6 +93,9 @@ const Login = () => {
             console.error('error occured', error);
         }
     };
+
+
+    
 
     return (
         <div className="min-h-screen flex">
@@ -139,6 +153,7 @@ const Login = () => {
                         <div className="flex items-center w-1/2">
                             <button onClick={handleLogin} className="px-2 py-2 bg-gray-800 text-white rounded flex-grow">Login</button>
                             <a value="" href="https://www.youtube.com/watch?v=pWTTMgU6EFY" className="ml-6">sign-up</a>
+
                         </div>
                 </div>
             </div>
