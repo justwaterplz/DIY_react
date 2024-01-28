@@ -1,5 +1,6 @@
 import Login from './Login';
 import Welcome from './Welcome';
+import Chat from './Chat';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -8,9 +9,14 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        {/* welcome page */}
         <Route path='/' element={<Welcome />} />
-          
+        
+        {/* login page */}
         <Route path='/login' element={<Login />} />
+
+        {/* chat page */}
+        <Route path='/chat' element={<Chat />}></Route>
       </Routes>
     </Router>
   );
