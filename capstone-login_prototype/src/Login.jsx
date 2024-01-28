@@ -37,7 +37,6 @@ const Login = () => {
     const displayedWords = currentLine
     .slice(0, currentWordIndex + 1)
     .map((word, index, array) => (index === 4 && index !== array.length - 1 ? `${word}\n` : word)) 
-    // Add a line break after the fifth word
     .join(' ');
     //문장 끝
 
