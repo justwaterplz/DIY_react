@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily:{
         custom: ["Pacifico", "cursive"],
+        productFont: ["Nanum Pen Script", "cursive"],
       }
     },
   },
