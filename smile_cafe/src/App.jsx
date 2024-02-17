@@ -11,13 +11,11 @@ function App() {
   
   return (
     <Router>
-      <div className="flex flex-col h-screen">
         <Header />
           <Routes>
             <Route path="/" element={<Menu />}/>
           </Routes>
         <Footer />
-      </div>
     </Router>
   );
 }
