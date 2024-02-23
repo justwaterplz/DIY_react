@@ -95,16 +95,57 @@ const Brand = () => {
                 {/* 2. space for brief summary */}
                 <div className="bg-fuchsia-300 w-full max-w-6xl mx-auto p-6 flex justify-between min-h-[80vh]">
                     {/* area for paragraph */}
-                    <div className="bg-white w-1/2 h-full">
-                        <p className="">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, illum. Nisi incidunt magni reprehenderit, ut asperiores porro similique minus cumque non ad obcaecati quis, accusantium impedit dignissimos architecto dolorum aliquam?
-                        </p>
+                    <div className="bg-white flex-1 flex flex-col p-4 justify-center ">
+                        <div className="ml-14 font-noto_sans_kr">
+                            <p className="text-6xl">
+                                SMILE CAFE
+                            </p>
+                            <p className="text-6xl">CONCEPT</p>
+
+                            <br />
+                            <p>
+                                SMILE CAFE 수영점은, 음료 및 디저트 전문점으로
+                            </p>
+                            <p>
+                                다양한 음료와 디저트를 맛 보실수 있습니다.
+                            </p>
+                            <p>노력한 만큼 더 맛있다!</p>
+                            <p>
+                                우수한 품질의 음료를 합리적인 가격으로 제공하며
+                            </p>
+                            <p>
+                                다양한 이벤트와 혜택이 있습니다.
+                            </p>
+                        </div>
+                        
                     </div>
                     {/* area for brief image */}
                     <div className="bg-black w-1/2 h-2/3">
                         <img src="/images/content/main_page/smile.webp" alt="brand_image" 
                         className="mt-10 ml-6"/>
                     </div>
+                </div>
+
+                {/* 3. cafe history */}
+                <div className="bg-orange-500 w-full max-w-6xl mx-auto p-6 flex justify-between min-h-[80vh]">
+                    {/* First circle */}
+                    <div className="flex justify-center items-center w-full relative">
+        {/* Line connecting circles */}
+        <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 h-1 bg-gray-700" style={{width: 'calc(100% - 12rem)'}}></div>
+
+        {/* First circle */}
+        <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center text-center z-10">
+            <p className="text-sm px-3">Established 2021</p>
+        </div>
+
+        {/* Spacer to ensure circles are evenly distributed */}
+        <div className="flex-1"></div>
+
+        {/* Second circle */}
+        <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center text-center z-10">
+            <p className="text-sm px-3">100th Store</p>
+        </div>
+    </div>
                 </div>
             </div>
         </div>
