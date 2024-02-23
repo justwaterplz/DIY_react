@@ -9,6 +9,7 @@ export default {
       fontFamily:{
         custom: ["Pacifico", "cursive"],
         productFont: ["Nanum Pen Script", "cursive"],
+        noto_sans_kr: ["Noto Sans KR", "sans-serif"],
       }
     },
   },
