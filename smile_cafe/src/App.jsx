@@ -15,7 +15,9 @@ function App() {
         <Header />
           <Routes>
             <Route path="/" element={<Menu />}/>
-            <Route path='/brand' element={<Brand />}/>
+
+            {/* about/ (brand-line) */}
+            <Route path='/about/brand' element={<Brand />}/>
           </Routes>
         <Footer />
     </Router>

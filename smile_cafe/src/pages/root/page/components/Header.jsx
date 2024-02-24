@@ -7,7 +7,7 @@ const Header = () => {
             <div className="h-32 flex items-center justify-between px-4">
             {/* logo, img 들어갈 공간 */}
                 <div className="flex items-center">
-                    <a href="#" className="flex items-center">
+                    <Link to="/" className="flex items-center">
                         <span className="font-custom text-4xl">
                             SMILE
                         </span>
@@ -15,7 +15,7 @@ const Header = () => {
                         <span className="font-custom text-4xl">
                             CAFE
                         </span>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* nav-bar */}
@@ -23,7 +23,7 @@ const Header = () => {
                     <nav className="flex items-center h-32 ml-36">
                         <ul className="flex">
                             <li className="mr-14 font-custom">
-                                <Link to="/brand">Brand</Link>
+                                <Link to="/about/brand">Brand</Link>
                             </li>
                             <li className="mr-14 font-custom">
                                 <Link to="/menu">
