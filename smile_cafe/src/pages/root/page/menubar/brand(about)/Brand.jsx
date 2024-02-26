@@ -1,10 +1,19 @@
 // Map.jsx와 /about이란 url을 공유하는 페이지. 카페에 대한 간략한 설명 화면에 표시
+import { useEffect, useState } from "react";
 const Brand = () => {
+
+    //slate인 부분 애니메이션 구현하기
+    const [height, setHeight] = useState(0);
+
+    useEffect(() => {
+        setHeight(240);
+        //h-60 is equal to 240px
+    }, []);
 
     return(
         <div className="h-screen">
             {/* slate space */}
-            <div className="bg-slate-800 h-60 flex justify-center items-center">
+            <div className="bg-slate-800 flex justify-center items-center transition-all duration-700 ease-in-out" style={{ height: `${height}px` }}>
                 {/* some space for texts(yellow?) */}
                 <div className="flex flex-col text-center">
                     <p className="text-white font-mono">SMILE CAFE STORY</p>
