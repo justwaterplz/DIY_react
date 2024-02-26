@@ -20,21 +20,16 @@ const Header = () => {
     
 
     return(
-        <div className={`w-screen transition-duration-300 border-gray-400 border-b-2 h-full
-        ${isHeaderHovered ? 'bg-white hover:bg-white' : 'bg-yellow-500 hover:bg-yellow-500'}
-        ${isHeaderHovered ? 'h-full' : 'h-32' } 
-        transition ease-in-out`
-        }
-        onMouseEnter={
-            () => {
-                console.log('mouse over')
-                setIsHeaderHovered(true)
-            }
-        }
-        onMouseLeave={() => {
-            console.log('mouse out');
-            setIsHeaderHovered(false)
-        }}>
+        <div className={`w-screen transition-duration-300 border-gray-400 border-b-2 
+        ${activeMenu ? 'bg-white h-[132px]' : 'bg-yellow-500 h-32'} 
+        transition ease-in-out`}
+        // onMouseEnter={
+        //     () => {
+        //         console.log('mouse over')
+        //         setIsHeaderHovered(true);
+        //     }
+        // }
+        onMouseLeave={handleMenuMouseOut}>
             {/* 전체 header space */}
             <div className="h-32 flex items-center justify-between px-4">
             {/* logo, img 들어갈 공간 */}
@@ -60,9 +55,10 @@ const Header = () => {
                             }`}
                             onMouseOver={() => handleMenuHover('brand')}
                             onMouseOut={handleMenuMouseOut}>
-                                <Link to="/about/brand" className="inline-block items-center" style={{ height: 'inherit' }}>
+                                <Link to="/about/brand" className="inline-block items-center" >
                                     Brand
                                 </Link>
+                                
 
                                 {/* submenu - shown when it's hovered */}
                                 <div className={`absolute hidden group-hover:flex flex-col mr-4 mb-2 bg-white shadow-md mt-1 font-noto_sans_kr 
