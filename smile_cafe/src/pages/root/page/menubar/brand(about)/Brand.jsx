@@ -14,10 +14,10 @@ const Brand = () => {
             </div>
 
             {/* lower part of this page. */}
-            <div className="flex-grow  bg-teal-300 flex flex-col space-y-4 items-center">
+            <div className="flex-grow  flex flex-col space-y-4 items-center">
                 
                 {/* 1. space for some text chunks  */}
-                <div className="grid grid-rows-[auto_1fr] gap-4 min-h-[80vh] bg-blue-300 p-4 text-center">
+                <div className="grid grid-rows-[auto_1fr] gap-4 min-h-[80vh]  p-4 text-center">
                     {/* text area */}
                     <div className="space-y-4">
                         {/* upper chunk */}
@@ -93,7 +93,7 @@ const Brand = () => {
                 </div>
 
                 {/* 2. space for brief summary */}
-                <div className="bg-fuchsia-300 w-full max-w-6xl mx-auto p-6 flex justify-between min-h-[80vh]">
+                <div className=" w-full max-w-6xl mx-auto p-6 flex justify-between min-h-[80vh] ">
                     {/* area for paragraph */}
                     <div className="bg-white flex-1 flex flex-col p-4 justify-center ">
                         <div className="ml-14 font-noto_sans_kr">
@@ -120,32 +120,43 @@ const Brand = () => {
                         
                     </div>
                     {/* area for brief image */}
-                    <div className="bg-black w-1/2 h-2/3">
+                    <div className="bg-white w-1/2 h-2/3">
                         <img src="/images/content/main_page/smile.webp" alt="brand_image" 
                         className="mt-10 ml-6"/>
                     </div>
                 </div>
 
                 {/* 3. cafe history */}
-                <div className="bg-orange-500 w-full max-w-6xl mx-auto p-6 flex justify-between min-h-[80vh]">
-                    {/* First circle */}
-                    <div className="flex justify-center items-center w-full relative">
-        {/* Line connecting circles */}
-        <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 h-1 bg-gray-700" style={{width: 'calc(100% - 12rem)'}}></div>
+                <div className="flex flex-col bg-white w-full max-w-6xl mx-auto p-6 justify-around min-h-[80vh] space-y-4">
 
-        {/* First circle */}
-        <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center text-center z-10">
-            <p className="text-sm px-3">Established 2021</p>
-        </div>
+                    {/* space for text */}       
+                    <div className="flex items-center justify-center">
+                        <p className="text-center font-noto_sans_kr text-6xl mt-10">연혁</p>
+                    </div>
 
-        {/* Spacer to ensure circles are evenly distributed */}
-        <div className="flex-1"></div>
 
-        {/* Second circle */}
-        <div className="bg-white rounded-full w-24 h-24 flex items-center justify-center text-center z-10">
-            <p className="text-sm px-3">100th Store</p>
-        </div>
-    </div>
+                    <div className="flex justify-center items-center w-full mt-32 mb-32 font-noto_sans_kr">
+                        {/* first circle */}
+                        <div className="bg-white rounded-full size-48 flex items-center justify-center text-center z-10 flex-col border-2
+                        border-yellow-500">
+                            <p className="text-xl px-3 ">2024.02.15</p>
+                            <br />
+                            <p className="text-sm px-3">첫 오픈</p>
+                        </div>
+
+                        {/* connecting line */}
+                        <div className="w-20  bg-black" style={{ height: '2px' }}></div>
+
+                        {/* second circle */}
+                        <div className="bg-white rounded-full size-48 flex items-center justify-center text-center z-10 flex-col border-2 border-yellow-500">
+                            <p className="text-xl px-3">2024 여름방학</p>
+                            <br />
+                            <p className="text-sm px-3">기대해주세요</p>
+                        </div>
+                    </div>
+
+
+                    
                 </div>
             </div>
         </div>

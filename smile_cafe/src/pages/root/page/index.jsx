@@ -1,6 +1,6 @@
 import './index.css'
 import products from './data/products';
-const Menu = () => {
+const Main = () => {
     return (
       <div className="flex-grow justify-between">
       {/* 1st row */}
@@ -41,32 +41,6 @@ const Menu = () => {
           </div>
       </div>
     </div>
-        // <div className="flex-grow justify-between">
-
-        //   {/* 1st row */}
-        //   <div className="justify-start items-center flex h-1/3 mt-6">
-        //     <span className='text-xl mr-2 ml-10'>■</span>
-        //     <p className='font-custom text-4xl'>DRINK</p>
-
-        //     {/*  */}
-        //   </div>
-
-        //   {/* 2nd row 높이 맞추는데 노가다함*/}
-        //   <div className="justify-start items-center flex h-96">
-        //     <span className='text-xl mr-2 ml-10'>■</span>
-        //     <p className='font-custom text-4xl'>DESSERT</p>
-        //   </div>
-
-        //   <div className="flex flex-wrap justify-start items-start ml-10 mt-6">
-        //     {products.map(product => (
-        //     <div key={product.id} className="flex flex-col items-center ml-4">
-        //       <img src={product.image} alt={product.name} className="w-24 h-24 object-cover" />
-        //       <p className="text-lg mt-2">{product.name}</p>
-        //       <p className="text-sm">{product.price}</p>
-        //     </div>
-        //     ))}
-        //   </div>
-        // </div>
     );
   }
-export default Menu;  
+export default Main;  

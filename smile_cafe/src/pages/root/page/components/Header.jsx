@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 
     return(
-        <div className="w-screen bg-blue-400">
+        <div className="w-screen bg-yellow-500">
             {/* 전체 header space */}
             <div className="h-32 flex items-center justify-between px-4">
             {/* logo, img 들어갈 공간 */}
